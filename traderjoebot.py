@@ -61,7 +61,6 @@ def incoming(exchange):
         if not message:
             break
         type = message['type']
-        
         if type == 'fill' and message['symbol']=='BOND':
             buyBonds(exchange)
         if type == "close":
@@ -75,6 +74,7 @@ def incoming(exchange):
             elif symbol == 'VALE': 
                 tickers['vale'].append(price) 
         if type == 'reject' or type =='ack':
+            #To keep track of what was happening to our orders
             print(message)
 
         sizeLim +=1
@@ -88,7 +88,7 @@ def ADRStrat(a, b):
     if meanValbz - meanVale >= 2:
         return [True, meanVale, meanValbz]
 
-def playbook(exchange, tickers):
+def working_func(exchange, tickers):
     global order_no
     if(len(tickers['vale']) >= 2 and len(tickers['valbz']) >= 2):
         x = tickers['vale'][-2:]
@@ -116,7 +116,7 @@ def main():
     order_no+=1
     while(True):
         incoming(exchange)
-        playbook(exchange,tickers)
+        working_func(exchange,tickers)
             
 if __name__ == "__main__":
     main()

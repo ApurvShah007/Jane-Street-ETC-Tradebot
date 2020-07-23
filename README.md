@@ -7,6 +7,6 @@ Competed against 24 teams to write a bot on the Amazon cloud server. We used str
 
 [![HitCount](http://hits.dwyl.com/ApurvShah007/Jane-Street-ETC-Tradebot.svg)](http://hits.dwyl.com/ApurvShah007/Jane-Street-ETC-Tradebot)
 
-#Authors:
-Apurv Shah
-Chirag Jhawar
+# Authors:
+1) Apurv Shah
+2) Chirag Jhawar
